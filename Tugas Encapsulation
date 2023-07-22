@@ -1,0 +1,83 @@
+Baik, berikut adalah perubahan program sebelumnya untuk memenuhi permintaan Anda:
+
+```python
+class Mobil:
+    def __init__(self, merk, tahun, warna):
+        self.__merk = merk  # Mengubah properti merk menjadi private
+        self.__tahun = tahun  # Mengubah properti tahun menjadi private
+        self.warna = warna
+
+    def get_merk(self):  # Method getter untuk merk
+        return self.__merk
+
+    def set_merk(self, new_merk):  # Method setter untuk merk
+        self.__merk = new_merk
+
+    def get_tahun(self):  # Method getter untuk tahun
+        return self.__tahun
+
+    def set_tahun(self, new_tahun):  # Method setter untuk tahun
+        self.__tahun = new_tahun
+
+    def info(self):
+        return f"Mobil {self.__merk} tahun {self.__tahun}, berwarna {self.warna}"
+
+class Mahasiswa:
+    def __init__(self, nama, npm, jurusan):
+        self.__nama = nama  # Mengubah properti nama menjadi private
+        self.__npm = npm  # Mengubah properti npm menjadi private
+        self.jurusan = jurusan
+
+    def get_nama(self):  # Method getter untuk nama
+        return self.__nama
+
+    def set_nama(self, new_nama):  # Method setter untuk nama
+        self.__nama = new_nama
+
+    def get_npm(self):  # Method getter untuk npm
+        return self.__npm
+
+    def set_npm(self, new_npm):  # Method setter untuk npm
+        self.__npm = new_npm
+
+    def info(self):
+        return f"Mahasiswa {self.__nama} ({self.__npm}), jurusan {self.jurusan}"
+
+# Pembuatan objek dari class Mobil
+mobil1 = Mobil("Honda Civic", 2021, "Merah")
+mobil2 = Mobil("Toyota Fortuner", 2022, "Putih")
+
+# Memanggil method info() dari objek mobil1 dan mobil2
+print(mobil1.info())
+print(mobil2.info())
+
+# Mengakses variabel private menggunakan method getter dan setter
+print("Merk mobil1:", mobil1.get_merk())  # Output: Merk mobil1: Honda Civic
+print("Tahun mobil2:", mobil2.get_tahun())  # Output: Tahun mobil2: 2022
+
+# Mengubah nilai variabel private menggunakan method setter
+mobil1.set_merk("Mitsubishi Xpander")
+mobil2.set_tahun(2023)
+
+# Memanggil method info() dari objek mobil1 dan mobil2 setelah perubahan
+print(mobil1.info())  # Output: Mobil Mitsubishi Xpander tahun 2021, berwarna Merah
+print(mobil2.info())  # Output: Mobil Toyota Fortuner tahun 2023, berwarna Putih
+
+# Pembuatan objek dari class Mahasiswa
+mahasiswa1 = Mahasiswa("John Doe", "202110001", "Teknik Informatika")
+mahasiswa2 = Mahasiswa("Jane Smith", "202110002", "Ekonomi")
+
+# Mengakses variabel private menggunakan method getter
+print("Nama mahasiswa1:", mahasiswa1.get_nama())  # Output: Nama mahasiswa1: John Doe
+print("NPM mahasiswa2:", mahasiswa2.get_npm())  # Output: NPM mahasiswa2: 202110002
+
+# Mengubah nilai variabel private menggunakan method setter
+mahasiswa1.set_nama("Michael Brown")
+mahasiswa2.set_npm("202110003")
+
+# Memanggil method info() dari objek mahasiswa1 dan mahasiswa2 setelah perubahan
+print(mahasiswa1.info())  # Output: Mahasiswa Michael Brown (202110001), jurusan Teknik Informatika
+print(mahasiswa2.info())  # Output: Mahasiswa Jane Smith (202110003), jurusan Ekonomi
+```
+
+Dalam perubahan di atas, dua properti dalam class `Mobil` dan `Mahasiswa` telah diubah menjadi private dengan awalan "__". Kemudian, method getter dan setter telah ditambahkan untuk masing-masing properti, sehingga kita bisa mengakses dan mengubah nilai properti private tersebut menggunakan method getter dan setter yang telah dibuat.
